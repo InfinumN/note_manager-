@@ -1,5 +1,7 @@
 note = {'status': 'отложено'}
 available_status = ['выполнено', 'в процессе', 'отложено'] #Возможные статусы
+print('Статус заметки: ',note['status'])
+
 
 status_temp = 3 #будущий индекс списка доступных статусов
 
@@ -10,10 +12,10 @@ while status_temp not in [0, 1, 2]:
     try:
         status_temp = int(status_temp)
         note['status'] = available_status[status_temp]
-        print('Статус заметки успешно обновлён:', available_status[status_temp])
+        print('Статус заметки успешно обновлён:', note['status'])
     except ValueError:
         print('Ошибка, введено не число! Повторите попытку.')
     except IndexError:
-        print('Ошибка, введено неизвестное число, выберите пожалуйста из списка.')
+        print('Введено неизвестное число, выберите пожалуйста из списка.')
 
 print('Программа успешно завершила работу.')
